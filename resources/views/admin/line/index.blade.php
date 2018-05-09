@@ -6,11 +6,11 @@
     <div class="container-fluid">
         <div class="row mb-2">
             <div class="col-sm-6">
-                <h1>Requesters</h1>
+                <h1>lines</h1>
             </div>
             <div class="col-sm-6">
                 <ol class="breadcrumb float-sm-right">
-                    <a class="btn btn-primary" href="{{route('requester.create')}}">Add new</a>
+                    <a class="btn btn-primary" href="{{route('line.create')}}">Add new</a>
                 </ol>
             </div>
         </div>
@@ -25,7 +25,7 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-md-8">
-                            <h3 class="card-title mb-2">Showing {{$requesters->count() }} Records</h3>
+                            <h3 class="card-title mb-2">Showing {{$lines->count() }} Records</h3>
                         </div>
                         <div class="col-md-4">
                             <form class="navbar-form card-title" role="search">
@@ -44,21 +44,21 @@
                     <table id="example2" class="table table-bordered table-hover">
                         <thead style="background: #0c5460; color: #fff;">
                         <tr>
-                            <th>Requester ID</th>
-                            <th>Requester Number</th>
-                            <th>Requester Email</th>
-                            <th>Requester Status</th>
+                            <th>Request line ID</th>
+                            <th>Receiver Type</th>
+                            <th>Request Line</th>
+                            <th>Status</th>
                             <th>Action Menu</th>
                         </tr>
                         </thead>
                         <tbody>
-                        @foreach($requesters as $requester)
+                        @foreach($lines as $line)
                         <tr>
-                            <td>{{ $requester->id  }}</td>
-                            <td>{{ $requester->number  }}</td>
-                            <td>{{ $requester->email  }}</td>
+                            <td>{{ $line->id  }}</td>
+                            <td>{{ $line->receiver_type  }}</td>
+                            <td>{{ $line->line  }}</td>
                             <td>
-                                @if($requester->status == 1)
+                                @if($line->status == 1)
                                 Active
                                 @else
                                 Inactive
@@ -70,9 +70,9 @@
                                         Action
                                     </button>
                                     <div class="dropdown-menu">
-                                        <a class="dropdown-item" href="{{ route('requester', $requester->id)  }}">View Details</a>
-                                        <a class="dropdown-item" href="{{  route('requester.edit', $requester->id)  }}">Edit Details</a>
-                                        <a class="dropdown-item" href="#">View Requests</a>
+                                        <a class="dropdown-item" href="{{ route('line', $line->id)  }}">View Details</a>
+                                        <a class="dropdown-item" href="{{  route('line.edit', $line->id)  }}">Edit Details</a>
+                                        {{--<a class="dropdown-item" href="#">View Requests</a>--}}
                                     </div>
                                 </div>
                             </td>
@@ -81,8 +81,8 @@
                         </tbody>
                         <tfoot>
                         <tr>
-                            <th colspan="2">Showing to {{ $requesters->count()}} of {{ $requesters->total()}} Records</th>
-                            <th colspan="3">{{ $requesters->links() }}</th>
+                            <th colspan="2">Showing to {{ $lines->count()}} of {{ $lines->total()}} Records</th>
+                            <th colspan="3">{{ $lines->links() }}</th>
                         </tr>
                         </tfoot>
                     </table>

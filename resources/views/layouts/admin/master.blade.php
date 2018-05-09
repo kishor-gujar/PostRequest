@@ -184,7 +184,7 @@
                         <a href="{{ route('requests') }}" class="nav-link">
                             <i class="nav-icon fa fa-th"></i>
                             <p>
-                                Submitted Request
+                                Submitted Requests
                             </p>
                         </a>
                     </li><li class="nav-item">
@@ -209,7 +209,7 @@
                             </p>
                         </a>
                     </li><li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('lines') }}" class="nav-link">
                             <i class="nav-icon fa fa-th"></i>
                             <p>
                                 Request Lines

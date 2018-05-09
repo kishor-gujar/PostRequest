@@ -14,6 +14,7 @@ class DatabaseSeeder extends Seeder
          $this->call([
              RequesterTableSeeder::class,
              SubmitedRequestTableSeeder::class,
+             RequestLineTableSeeder::class
          ]);
 
     }

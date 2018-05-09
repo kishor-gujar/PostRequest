@@ -20,26 +20,34 @@ Auth::routes();
 Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => '/admin'], function() {
-    Route::get('/', 'admin\AdminController@index');
-    Route::get('/requesters', 'admin\RequesterController@index')->name('requesters');
+    Route::get('/', 'Admin\AdminController@index');
 
+    Route::get('/requesters', 'Admin\RequesterController@index')->name('requesters');
     Route::group(['prefix' => '/requester'], function() {
-        Route::get('/', 'admin\SubmitedRequestController@index')->name('requests');
-        Route::get('/{id}', 'admin\RequesterController@view')->name('requester');
-        Route::get('/create', 'admin\RequesterController@create')->name('requester.create');
-        Route::post('/create', 'admin\RequesterController@createPost')->name('requester.create');
-        Route::get('/edit/{id}', 'admin\RequesterController@getEdit')->name('requester.edit');
-        Route::post('/edit/{id}', 'admin\RequesterController@postEdit')->name('requester.edit');
+        Route::get('/{id}', 'Admin\RequesterController@view')->name('requester');
+        Route::get('/create', 'Admin\RequesterController@create')->name('requester.create');
+        Route::post('/create', 'Admin\RequesterController@createPost')->name('requester.create');
+        Route::get('/edit/{id}', 'Admin\RequesterController@getEdit')->name('requester.edit');
+        Route::post('/edit/{id}', 'Admin\RequesterController@postEdit')->name('requester.edit');
     });
 
+    Route::get('/requests', 'Admin\SubmitedRequestController@index')->name('requests');
     Route::group(['prefix' => '/request'], function() {
-        Route::get('/create', 'admin\SubmitedRequestController@create')->name('request.create');
-        Route::post('/create', 'admin\SubmitedRequestController@createPost')->name('request.create');
-        Route::get('/{id}', 'admin\SubmitedRequestController@view')->name('request');
-        Route::get('/edit/{id}', 'admin\SubmitedRequestController@getEdit')->name('request.edit');
-        Route::post('/edit/{id}', 'admin\SubmitedRequestController@postEdit')->name('request.edit');
+        Route::get('/create', 'Admin\SubmitedRequestController@create')->name('request.create');
+        Route::post('/create', 'Admin\SubmitedRequestController@createPost')->name('request.create');
+        Route::get('/{id}', 'Admin\SubmitedRequestController@view')->name('request');
+        Route::get('/edit/{id}', 'Admin\SubmitedRequestController@getEdit')->name('request.edit');
+        Route::post('/edit/{id}', 'Admin\SubmitedRequestController@postEdit')->name('request.edit');
     });
-    
+
+    Route::get('/request-lines', 'Admin\LineController@index')->name('lines');
+    Route::group(['prefix' => '/request-line'], function() {
+        Route::get('/create', 'Admin\LineController@create')->name('line.create');
+        Route::post('/create', 'Admin\LineController@createPost')->name('line.create');
+        Route::get('/{id}', 'Admin\LineController@view')->name('line');
+        Route::get('/edit/{id}', 'Admin\LineController@getEdit')->name('line.edit');
+        Route::post('/edit/{id}', 'Admin\LineController@postEdit')->name('line.edit');
+    });
 });
 
 

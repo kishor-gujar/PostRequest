@@ -72,7 +72,7 @@
                                         <div class="dropdown-menu">
                                             <a class="dropdown-item" href="{{ route('requester', $requester->id)  }}">View Details</a>
                                             <a class="dropdown-item" href="{{  route('requester.edit', $requester->id)  }}">Edit Details</a>
-                                            <a class="dropdown-item" href="#">View Requests</a>
+                                            {{--<a class="dropdown-item" href="#">View Requests</a>--}}
                                         </div>
                                     </div>
                                 </td>

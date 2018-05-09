@@ -18,8 +18,8 @@ class CreateRequestLinesTable extends Migration
             $table->string('line');
             $table->string('receiver_type');
             $table->string('receiver_sub_type');
-            $table->string('request_line_description');
-            $table->double('Price_per_month');
+            $table->text('request_line_description');
+            $table->double('price_per_month');
             $table->string('status');
             $table->timestamps();
         });
