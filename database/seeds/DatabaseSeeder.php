@@ -19,6 +19,8 @@ class DatabaseSeeder extends Seeder
              ReceiverSubTypeTableSeeder::class,
              CompanyTableSeeder::class,
              ReceiverTableSeeder::class,
+             StateTableSeeder::class,
+             TownTableSeeder::class,
          ]);
 
     }

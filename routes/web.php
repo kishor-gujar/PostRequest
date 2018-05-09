@@ -82,6 +82,22 @@ Route::group(['prefix' => '/admin'], function() {
          Route::get('/edit/{id}', 'Admin\ReceiverController@getEdit')->name('receiver.edit');
          Route::post('/edit/{id}', 'Admin\ReceiverController@postEdit')->name('receiver.edit');
      });
+    Route::get('/states', 'Admin\StateController@index')->name('states');
+     Route::group(['prefix' => '/state'], function() {
+         Route::get('/create', 'Admin\StateController@create')->name('state.create');
+         Route::post('/create', 'Admin\StateController@createPost')->name('state.create');
+         Route::get('/{id}', 'Admin\StateController@view')->name('state');
+         Route::get('/edit/{id}', 'Admin\StateController@getEdit')->name('state.edit');
+         Route::post('/edit/{id}', 'Admin\StateController@postEdit')->name('state.edit');
+     });
+    Route::get('/towns', 'Admin\TownController@index')->name('towns');
+     Route::group(['prefix' => '/town'], function() {
+         Route::get('/create', 'Admin\TownController@create')->name('town.create');
+         Route::post('/create', 'Admin\TownController@createPost')->name('town.create');
+         Route::get('/{id}', 'Admin\TownController@view')->name('town');
+         Route::get('/edit/{id}', 'Admin\TownController@getEdit')->name('town.edit');
+         Route::post('/edit/{id}', 'Admin\TownController@postEdit')->name('town.edit');
+     });
 });
 
 

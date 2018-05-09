@@ -245,14 +245,14 @@
                         </a>
                     </li>
                     <li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('states') }}" class="nav-link">
                             <i class="nav-icon fa fa-th"></i>
                             <p>
                                 States
                             </p>
                         </a>
                     </li><li class="nav-item">
-                        <a href="#" class="nav-link">
+                        <a href="{{ route('towns') }}" class="nav-link">
                             <i class="nav-icon fa fa-th"></i>
                             <p>
                                 Towns
