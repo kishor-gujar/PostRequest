@@ -63,7 +63,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="number">Request line description</label>
-                                    <input type="text" name="request_line_description" value="{{ $line->request_line_description }}"  class="form-control" placeholder="Enter Request line description">
+                                    <textarea type="text" name="request_line_description"  class="form-control" placeholder="Enter Request line description">{{ $line->request_line_description }}</textarea>
                                     <span class="text-danger">{{ $errors->first('request_line_description') }}</span>
                                 </div>
                                 <div class="form-group">
