@@ -13,7 +13,7 @@ class SubmitedRequestTableSeeder extends Seeder
     {
         $faker = Faker\Factory::create();
 
-        $limit = 200;
+        $limit = 20;
         $requesters = \App\Requester::pluck('id')->toArray();
         for ($i = 0; $i < $limit; $i++) {
             DB::table('submited_requests')->insert([

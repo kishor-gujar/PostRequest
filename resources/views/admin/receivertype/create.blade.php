@@ -43,7 +43,7 @@
                             </div>
                         @endif
 
-                          <form role="form" method="post" action="{{route('receiver-type.create')}}">
+                          <form role="form" method="post" action="{{route('receiver.type.create')}}">
                             {{ csrf_field() }}
                             <div class="card-body">
                                 <div class="form-group">

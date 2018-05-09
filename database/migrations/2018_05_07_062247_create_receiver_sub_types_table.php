@@ -16,7 +16,7 @@ class CreateReceiverSubTypesTable extends Migration
         Schema::create('receiver_sub_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('text');
-            $table->string('receiver_type');
+            $table->integer('receiver_type_id');
             $table->text('description');
             $table->string('image');
             $table->boolean('status');

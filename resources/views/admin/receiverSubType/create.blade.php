@@ -27,7 +27,7 @@
                     <!-- general form elements -->
                     <div class="card card-primary">
                         <div class="card-header">
-                            <h3 class="card-title">Quick Update</h3>
+                            <h3 class="card-title">Quick Create</h3>
                         </div>
                         <!-- /.card-header -->
                         <!-- form start -->
@@ -43,34 +43,43 @@
                             </div>
                         @endif
 
-                        <form role="form" method="post" action="{{route('receiver.type.edit', $receiverType->id)}}">
+                        <form role="form" method="post" action="{{route('receiver.sub.type.create')}}" enctype="multipart/form-data">
                             {{ csrf_field() }}
                             <div class="card-body">
                                 <div class="form-group">
-                                    <label for="type">Receiver Type</label>
-                                    <input type="text" name="type" value="{{ $receiverType->type }}"  class="form-control" placeholder="Enter Receiver Type">
-                                    <span class="text-danger">{{ $errors->first('type') }}</span>
+                                    <label for="text">Receiver sub Type</label>
+                                    <input type="text" name="text" value="{{ old('text') }}"  class="form-control" placeholder="Enter Receiver Type">
+                                    <span class="text-danger">{{ $errors->first('text') }}</span>
                                 </div>
                                 <div class="form-group">
-                                    <label for="code">Receiver type code</label>
-                                    <input type="text" name="code" value="{{ $receiverType->code }}" class="form-control " placeholder="Enter Receiver type code">
-                                    <span class="text-danger">{{ $errors->first('code') }}</span>
+                                    <label for="code">Receiver type</label>
+                                    <select name="receiver_type_id" id="receiver_type" class="form-control">
+                                        @foreach($receiverTypes as $receiverType)
+                                            <option value="{!! $receiverType->id !!}">{!! $receiverType->type !!}</option>
+                                        @endforeach
+                                    </select>
+                                    <span class="text-danger">{{ $errors->first('receiver_type_id') }}</span>
                                 </div>
-
                                 <div class="form-group">
                                     <label for="number">Receiver Type description</label>
-                                    <textarea type="text" name="description"  class="form-control" placeholder="Enter Request receiverType description">{{ $receiverType->description }}</textarea>
+                                    <textarea type="text" name="description"  class="form-control" placeholder="Enter receiver sub type description">{{ old('description') }}</textarea>
                                     <span class="text-danger">{{ $errors->first('description') }}</span>
                                 </div>
+                                <div class="form-group">
+                                    <label for="text">Image</label>
+                                    <input type="file" name="image"  class="form-control" placeholder="Select image">
+                                    <span class="text-danger">{{ $errors->first('image') }}</span>
+                                </div>
+
                                 <div class="form-group">
                                     <label for="status">Status</label>
                                     <div class="form-group">
                                         <div class="form-check">
-                                            <input class="form-check-input" name="status" type="radio" value="1" @if($receiverType->status == 1) checked @endif>
+                                            <input class="form-check-input" name="status" type="radio" value="1" @if(old('status') == 1) checked @endif>
                                             <label class="form-check-label">Active</label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" name="status" type="radio" value="0" @if($receiverType->status == 0) checked @endif>
+                                            <input class="form-check-input" name="status" type="radio" value="0" @if(old('status') == 0) checked @endif>
                                             <label class="form-check-label">Inactive</label>
                                             <span class="text-danger">{{ $errors->first('status') }}</span>
                                         </div>
@@ -85,11 +94,8 @@
                         </form>
                     </div>
                     <!-- /.card -->
-
-
                 </div>
                 <!--/.col (left) -->
-
             </div>
             <!-- /.row -->
         </div><!-- /.container-fluid -->

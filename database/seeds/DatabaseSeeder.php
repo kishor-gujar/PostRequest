@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
              SubmitedRequestTableSeeder::class,
              RequestLineTableSeeder::class,
              ReceiverTypeTableSeeder::class,
+             ReceiverSubTypeTableSeeder::class,
          ]);
 
     }

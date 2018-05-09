@@ -26,28 +26,32 @@
                 <div class="col-md-6">
                     <div class="card">
                         <div class="card-header">
-                            <h3 class="card-title">Receiver Type details</h3>
+                            <h3 class="card-title">Receiver sub type details</h3>
                         </div>
                         <!-- /.card-header -->
                         <div class="card-body p-0">
                             <table class="table table-condensed">
                                 <tbody>
                                 <tr>
+                                    <th style="width: 10px">Receiver sub type:</th>
+                                    <th>{{ $receiverSubType->text  }}</th>
+                                </tr>
+                                <tr>
                                     <th style="width: 10px">Receiver Type:</th>
-                                    <th>{{ $receiverType->type  }}</th>
+                                    <th>{{ $receiverSubType->receiverType->type  }}</th>
                                 </tr>
                                 <tr>
-                                    <th style="width: 10px">Receiver type code:</th>
-                                    <th>{{ $receiverType->code  }}</th>
+                                    <td>description:</td>
+                                    <td>{{ $receiverSubType->description  }}</td>
                                 </tr>
                                 <tr>
-                                    <td>Receiver Type description:</td>
-                                    <td>{{ $receiverType->description  }}</td>
+                                    <td>Image:</td>
+                                    <td> <img src="{{ $receiverSubType->image  }}" alt="{{ $receiverSubType->image  }}" width="300"></td>
                                 </tr>
                                 <tr>
                                     <td>Status:</td>
                                     <td>
-                                        @if($receiverType->status == 1)
+                                        @if($receiverSubType->status == 1)
                                             Active
                                         @else
                                             Inactive
@@ -58,9 +62,9 @@
                             <tfoot>
                             <tr>
                                 <td>
-                                    <a class="btn btn-danger" href="{{route('receiver.types')}}">Back</a>
+                                    <a class="btn btn-danger" href="{{route('receiver.sub.types')}}">Back</a>
                                 </td>
-                                <td><a class="btn btn-primary pull-right" href="{{route('receiver.type.edit', $receiverType->id)}}">Edit</a></td>
+                                <td><a class="btn btn-primary pull-right" href="{{route('receiver.sub.type.edit', $receiverSubType->id)}}">Edit</a></td>
                             </tr>
                             </tfoot>
                             </table>

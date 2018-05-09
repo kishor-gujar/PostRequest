@@ -6,7 +6,7 @@ use App\ReceiverType;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
-class ReceiverTypeConrtoller extends Controller
+class ReceiverTypeController extends Controller
 {
     public function index()
     {

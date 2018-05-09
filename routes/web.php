@@ -49,14 +49,23 @@ Route::group(['prefix' => '/admin'], function() {
         Route::post('/edit/{id}', 'Admin\LineController@postEdit')->name('line.edit');
     });
 
-    Route::get('/receiver-types', 'Admin\ReceiverTypeConrtoller@index')->name('receiver-types');
+    Route::get('/receiver-types', 'Admin\ReceiverTypeController@index')->name('receiver.types');
     Route::group(['prefix' => '/request-type'], function() {
-        Route::get('/create', 'Admin\ReceiverTypeConrtoller@create')->name('receiver-type.create');
-        Route::post('/create', 'Admin\ReceiverTypeConrtoller@createPost')->name('receiver-type.create');
-        Route::get('/{id}', 'Admin\ReceiverTypeConrtoller@view')->name('receiver-type');
-        Route::get('/edit/{id}', 'Admin\ReceiverTypeConrtoller@getEdit')->name('receiver-type.edit');
-        Route::post('/edit/{id}', 'Admin\ReceiverTypeConrtoller@postEdit')->name('receiver-type.edit');
+        Route::get('/create', 'Admin\ReceiverTypeController@create')->name('receiver.type.create');
+        Route::post('/create', 'Admin\ReceiverTypeController@createPost')->name('receiver.type.create');
+        Route::get('/{id}', 'Admin\ReceiverTypeController@view')->name('receiver.type');
+        Route::get('/edit/{id}', 'Admin\ReceiverTypeController@getEdit')->name('receiver.type.edit');
+        Route::post('/edit/{id}', 'Admin\ReceiverTypeController@postEdit')->name('receiver.type.edit');
     });
+
+    Route::get('/receiver-sub-types', 'Admin\ReceiverSubTypeController@index')->name('receiver.sub.types');
+     Route::group(['prefix' => '/receiver-sub-type'], function() {
+         Route::get('/create', 'Admin\ReceiverSubTypeController@create')->name('receiver.sub.type.create');
+         Route::post('/create', 'Admin\ReceiverSubTypeController@createPost')->name('receiver.sub.type.create');
+         Route::get('/{id}', 'Admin\ReceiverSubTypeController@view')->name('receiver.sub.type');
+         Route::get('/edit/{id}', 'Admin\ReceiverSubTypeController@getEdit')->name('receiver.sub.type.edit');
+         Route::post('/edit/{id}', 'Admin\ReceiverSubTypeController@postEdit')->name('receiver.sub.type.edit');
+     });
 });
 
 
