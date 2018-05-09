@@ -19,7 +19,7 @@ class CreateReceiversTable extends Migration
             $table->string('email');
             $table->string('contact_number');
             $table->string('operation');
-            $table->string('company');
+            $table->integer('company_id');
             $table->text('description');
             $table->boolean('status');
             $table->timestamps();
