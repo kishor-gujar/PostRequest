@@ -17,6 +17,7 @@ class DatabaseSeeder extends Seeder
              RequestLineTableSeeder::class,
              ReceiverTypeTableSeeder::class,
              ReceiverSubTypeTableSeeder::class,
+             CompanyTableSeeder::class,
          ]);
 
     }

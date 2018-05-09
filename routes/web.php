@@ -66,6 +66,14 @@ Route::group(['prefix' => '/admin'], function() {
          Route::get('/edit/{id}', 'Admin\ReceiverSubTypeController@getEdit')->name('receiver.sub.type.edit');
          Route::post('/edit/{id}', 'Admin\ReceiverSubTypeController@postEdit')->name('receiver.sub.type.edit');
      });
+    Route::get('/receiver-companies', 'Admin\CompanyController@index')->name('companies');
+     Route::group(['prefix' => '/receiver-company'], function() {
+         Route::get('/create', 'Admin\CompanyController@create')->name('company.create');
+         Route::post('/create', 'Admin\CompanyController@createPost')->name('company.create');
+         Route::get('/{id}', 'Admin\CompanyController@view')->name('company');
+         Route::get('/edit/{id}', 'Admin\CompanyController@getEdit')->name('company.edit');
+         Route::post('/edit/{id}', 'Admin\CompanyController@postEdit')->name('company.edit');
+     });
 });
 
 

@@ -15,7 +15,7 @@ class CreateReceiverCompaniesTable extends Migration
     {
         Schema::create('receiver_companies', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('company');
+            $table->string('name');
             $table->string('ref');
             $table->boolean('status');
             $table->timestamps();

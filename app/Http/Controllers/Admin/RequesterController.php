@@ -73,12 +73,12 @@ class RequesterController extends Controller
             'status' => 'required',
         ]);
 
-        $requesters = new Requester([
+        $requester = new Requester([
             'number' => $request->number,
             'email' => $request->email,
             'status' => $request->status
         ]);
-        $requesters->save();
+        $requester->save();
 
         \Session::flash('alert-success','Requester successfully Added.');
         return redirect()->route('requesters');
