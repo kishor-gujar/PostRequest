@@ -48,6 +48,15 @@ Route::group(['prefix' => '/admin'], function() {
         Route::get('/edit/{id}', 'Admin\LineController@getEdit')->name('line.edit');
         Route::post('/edit/{id}', 'Admin\LineController@postEdit')->name('line.edit');
     });
+
+    Route::get('/receiver-types', 'Admin\ReceiverTypeConrtoller@index')->name('receiver-types');
+    Route::group(['prefix' => '/request-type'], function() {
+        Route::get('/create', 'Admin\ReceiverTypeConrtoller@create')->name('receiver-type.create');
+        Route::post('/create', 'Admin\ReceiverTypeConrtoller@createPost')->name('receiver-type.create');
+        Route::get('/{id}', 'Admin\ReceiverTypeConrtoller@view')->name('receiver-type');
+        Route::get('/edit/{id}', 'Admin\ReceiverTypeConrtoller@getEdit')->name('receiver-type.edit');
+        Route::post('/edit/{id}', 'Admin\ReceiverTypeConrtoller@postEdit')->name('receiver-type.edit');
+    });
 });
 
 

@@ -16,7 +16,7 @@ class CreateReceiverTypesTable extends Migration
         Schema::create('receiver_types', function (Blueprint $table) {
             $table->increments('id');
             $table->string('type');
-            $table->string('type_code');
+            $table->string('code');
             $table->text('description');
             $table->string('status');
             $table->timestamps();
