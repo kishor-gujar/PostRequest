@@ -106,6 +106,14 @@ Route::group(['prefix' => '/admin'], function() {
          Route::get('/edit/{id}', 'Admin\PriorityController@getEdit')->name('priority.edit');
          Route::post('/edit/{id}', 'Admin\PriorityController@postEdit')->name('priority.edit');
      });
+    Route::get('/advertisers', 'Admin\AdvertiserController@index')->name('advertisers');
+     Route::group(['prefix' => '/advertiser'], function() {
+         Route::get('/create', 'Admin\AdvertiserController@create')->name('advertiser.create');
+         Route::post('/create', 'Admin\AdvertiserController@createPost')->name('advertiser.create');
+         Route::get('/{id}', 'Admin\AdvertiserController@view')->name('advertiser');
+         Route::get('/edit/{id}', 'Admin\AdvertiserController@getEdit')->name('advertiser.edit');
+         Route::post('/edit/{id}', 'Admin\AdvertiserController@postEdit')->name('advertiser.edit');
+     });
 });
 
 

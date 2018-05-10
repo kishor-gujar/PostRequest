@@ -6,11 +6,11 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1>priorities</h1>
+                    <h1>advertisers</h1>
                 </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-right">
-                        <a class="btn btn-primary" href="{{route('priority.create')}}">Add new</a>
+                        <a class="btn btn-primary" href="{{route('advertiser.create')}}">Add new</a>
                     </ol>
                 </div>
             </div>
@@ -25,7 +25,7 @@
                     <div class="card-header">
                         <div class="row">
                             <div class="col-md-8">
-                                <h3 class="card-title mb-2">Showing {{$priorities->count() }} Records</h3>
+                                <h3 class="card-title mb-2">Showing {{$advertisers->count() }} Records</h3>
                             </div>
                         <div class="col-md-4">
                             <form class="navbar-form card-title" role="search">
@@ -44,21 +44,21 @@
                         <table id="example2" class="table table-bordered table-hover">
                             <thead style="background: #0c5460; color: #fff;">
                             <tr>
-                                <th>Priority ID</th>
-                                <th>Priority Name</th>
-                                <th>Priority Price</th>
+                                <th>Advertiser ID</th>
+                                <th>Advertiser Name</th>
+                                <th>Contact Person Name</th>
                                 <th>Status</th>
                                 <th>Action Menu</th>
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($priorities as $priority)
+                            @foreach($advertisers as $advertiser)
                             <tr>
-                                <td>{{ $priority->id  }}</td>
-                                <td>{{ $priority->name  }}</td>
-                                <td>{{ $priority->amount  }}</td>
+                                <td>{{ $advertiser->id  }}</td>
+                                <td>{{ $advertiser->name  }}</td>
+                                <td>{{ $advertiser->contact_person  }}</td>
                                 <td>
-                                    @if($priority->status == 1)
+                                    @if($advertiser->status == 1)
                                         Active
                                     @else
                                         Inactive
@@ -70,8 +70,8 @@
                                             Action
                                         </button>
                                         <div class="dropdown-menu">
-                                            <a class="dropdown-item" href="{{ route('priority', $priority->id)  }}">View Details</a>
-                                            <a class="dropdown-item" href="{{  route('priority.edit', $priority->id)  }}">Edit Details</a>
+                                            <a class="dropdown-item" href="{{ route('advertiser', $advertiser->id)  }}">View Details</a>
+                                            <a class="dropdown-item" href="{{  route('advertiser.edit', $advertiser->id)  }}">Edit Details</a>
                                             {{--<a class="dropdown-item" href="#">View Requests</a>--}}
                                         </div>
                                     </div>
@@ -81,8 +81,8 @@
                             </tbody>
                             <tfoot>
                             <tr>
-                                <th colspan="2">Showing to {{ $priorities->count()}} of {{ $priorities->total()}} Records</th>
-                                <th colspan="3">{{ $priorities->links() }}</th>
+                                <th colspan="2">Showing to {{ $advertisers->count()}} of {{ $advertisers->total()}} Records</th>
+                                <th colspan="3">{{ $advertisers->links() }}</th>
                             </tr>
                             </tfoot>
                         </table>

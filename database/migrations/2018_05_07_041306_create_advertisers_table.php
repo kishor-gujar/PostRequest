@@ -16,7 +16,10 @@ class CreateAdvertisersTable extends Migration
         Schema::create('advertisers', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('contact_person_name');
+            $table->string('email');
+            $table->string('number');
+            $table->text('address');
+            $table->string('contact_person');
             $table->boolean('status');
             $table->timestamps();
         });
