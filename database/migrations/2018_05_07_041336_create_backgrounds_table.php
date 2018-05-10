@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBackgroundImagesTable extends Migration
+class CreateBackgroundsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,15 +13,16 @@ class CreateBackgroundImagesTable extends Migration
      */
     public function up()
     {
-        Schema::create('background_images', function (Blueprint $table) {
+        Schema::create('backgrounds', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name');
-            $table->string('advertiser');
+            $table->integer('advertiser_id');
             $table->string('image');
             $table->text('text');
             $table->string('external_link');
             $table->date('start_date');
             $table->date('end_date');
+            $table->boolean('status');
             $table->timestamps();
         });
     }
@@ -33,6 +34,6 @@ class CreateBackgroundImagesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('background_images');
+        Schema::dropIfExists('backgrounds');
     }
 }

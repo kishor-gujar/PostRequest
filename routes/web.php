@@ -114,6 +114,14 @@ Route::group(['prefix' => '/admin'], function() {
          Route::get('/edit/{id}', 'Admin\AdvertiserController@getEdit')->name('advertiser.edit');
          Route::post('/edit/{id}', 'Admin\AdvertiserController@postEdit')->name('advertiser.edit');
      });
+    Route::get('/backgrounds', 'Admin\BackgroundController@index')->name('backgrounds');
+     Route::group(['prefix' => '/background'], function() {
+         Route::get('/create', 'Admin\BackgroundController@create')->name('background.create');
+         Route::post('/create', 'Admin\BackgroundController@createPost')->name('background.create');
+         Route::get('/{id}', 'Admin\BackgroundController@view')->name('background');
+         Route::get('/edit/{id}', 'Admin\BackgroundController@getEdit')->name('background.edit');
+         Route::post('/edit/{id}', 'Admin\BackgroundController@postEdit')->name('background.edit');
+     });
 });
 
 

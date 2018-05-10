@@ -4,7 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class BackgroundImage extends Model
+class Background extends Model
 {
-    protected $fillable = ['name', 'advertiser_id', 'image', 'text', 'external_link', 'start_date', 'end_date'];
+    protected $fillable = ['name', 'advertiser_id', 'image', 'text', 'external_link', 'start_date', 'end_date', 'status'];
+
+    public function advertiser(){
+        return $this->belongsTo(Advertiser::class);
+    }
 }

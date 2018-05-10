@@ -18,8 +18,8 @@ class AdvertiserTableSeeder extends Seeder
         for ($i = 0; $i < $limit; $i++) {
             DB::table('advertisers')->insert([ //,
                 'name' => $faker->name(),
-                'number' => '234 '.$faker->phoneNumber,
                 'email' => $faker->email,
+                'number' => '234 '.$faker->phoneNumber,
                 'address' => $faker->address,
                 'contact_person' => $faker->name(),
                 'status' => $faker->boolean()
