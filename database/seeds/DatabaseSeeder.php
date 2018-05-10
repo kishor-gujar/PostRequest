@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
              ReceiverTableSeeder::class,
              StateTableSeeder::class,
              TownTableSeeder::class,
+             PriorityTableSeeder::class,
          ]);
 
     }

@@ -98,6 +98,14 @@ Route::group(['prefix' => '/admin'], function() {
          Route::get('/edit/{id}', 'Admin\TownController@getEdit')->name('town.edit');
          Route::post('/edit/{id}', 'Admin\TownController@postEdit')->name('town.edit');
      });
+    Route::get('/priorities', 'Admin\PriorityController@index')->name('priorities');
+     Route::group(['prefix' => '/priority'], function() {
+         Route::get('/create', 'Admin\PriorityController@create')->name('priority.create');
+         Route::post('/create', 'Admin\PriorityController@createPost')->name('priority.create');
+         Route::get('/{id}', 'Admin\PriorityController@view')->name('priority');
+         Route::get('/edit/{id}', 'Admin\PriorityController@getEdit')->name('priority.edit');
+         Route::post('/edit/{id}', 'Admin\PriorityController@postEdit')->name('priority.edit');
+     });
 });
 
 
