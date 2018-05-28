@@ -80,7 +80,7 @@
                                 </div>
                                 <div class="form-group">
                                     <label for="start_date">Start Date</label>
-                                    <input type="date" name="start_date" class="form-control" value="{{ $background->start_date }}" placeholder="Select Start Date">
+                                    <input  type="date" name="start_date" class="form-control" value="{{ $background->start_date }}" placeholder="Select Start Date">
                                     <span class="text-danger">{{ $errors->first('start_date') }}</span>
                                 </div>
                                 <div class="form-group">

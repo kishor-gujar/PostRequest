@@ -19,8 +19,8 @@ class RequestLineTableSeeder extends Seeder
         for ($i = 0; $i < $limit; $i++) {
             DB::table('request_lines')->insert([ //,
                 'line' => $faker->sentence(),
-                'receiver_type' => $faker->word,
-                'receiver_sub_type' => $faker->word,
+                'receiver_type_id' => $faker->numberBetween(1,20),
+                'receiver_sub_type_id' => $faker->numberBetween(1,20),
                 'request_line_description' => $faker->text(),
                 'price_per_month' => $faker->randomNumber(),
                 'status' => $faker->boolean()

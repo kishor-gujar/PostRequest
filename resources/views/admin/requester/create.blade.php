@@ -47,8 +47,13 @@
                             {{ csrf_field() }}
                             <div class="card-body">
                                 <div class="form-group">
+                                    <label for="name">Requester Name</label>
+                                    <input type="text" name="name" value="{{ old('name') }}"  class="form-control" placeholder="Enter name">
+                                    <span class="text-danger">{{ $errors->first('name') }}</span>
+                                </div>
+                                <div class="form-group">
                                     <label for="number">Requester Number</label>
-                                    <input type="number" name="number" value="{{ old('number')}}"  class="form-control" placeholder="Enter Number">
+                                    <input type="text" name="number" value="{{ old('number')}}"  class="form-control" placeholder="Enter Number" data-inputmask="&quot;mask&quot;: &quot;+(999) 999-9999-999&quot;" data-mask="">
                                     <span class="text-danger">{{ $errors->first('number') }}</span>
                                 </div>
                                 <div class="form-group">
@@ -60,12 +65,18 @@
                                     <label for="status">Status</label>
                                     <div class="form-group">
                                         <div class="form-check">
-                                            <input class="form-check-input" name="status" type="radio" value="1" @if(old('status') == 1) checked @endif>
-                                            <label class="form-check-label">Active</label>
+                                            <label>
+                                                <input type="radio" name="status" class="minimal" value="1" @if(old('status') == 1) checked @endif>
+                                                Active
+                                            </label>
                                         </div>
                                         <div class="form-check">
-                                            <input class="form-check-input" name="status" type="radio" value="0" @if(old('status') == 0) checked @endif>
-                                            <label class="form-check-label">Inactive</label>
+                                            <label>
+                                                <input type="radio" name="status" class="minimal" value="0" @if(old('status') == 0) checked @endif>
+                                                Inactive
+                                            </label>
+                                            {{--<input class="form-check-input" name="status" type="radio" >--}}
+
                                             <span class="text-danger">{{ $errors->first('status') }}</span>
                                         </div>
                                     </div>
@@ -92,3 +103,4 @@
     <!-- /.content -->
 
 @endsection
+

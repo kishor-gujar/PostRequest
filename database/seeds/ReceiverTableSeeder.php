@@ -14,6 +14,7 @@ class ReceiverTableSeeder extends Seeder
          $faker = Faker\Factory::create();
         $limit = 20;
          $companies = \App\ReceiverCompany::pluck('id')->toArray();
+         $receiverTypes = \App\ReceiverType::pluck('id')->toArray();
         for ($i = 0; $i < $limit; $i++) {
             DB::table('receivers')->insert([ //,
                 'name' => $faker->name(),
@@ -21,6 +22,7 @@ class ReceiverTableSeeder extends Seeder
                 'contact_number' => '234 '.$faker->phoneNumber,
                 'operation' => $faker->randomElement(['Independent', 'Company']),
                 'company_id' => $faker->randomElement($companies),
+                'receiver_type_id' => $faker->randomElement($receiverTypes),
                 'description' => $faker->text(),
                 'status' => $faker->boolean,
             ]);

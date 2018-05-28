@@ -19,7 +19,8 @@ class ReceiverController extends Controller
     public function view($id)
     {
         if($id){
-            $receiver = receiver::findOrFail($id);
+            $receiver = Receiver::findOrFail($id);
+//            dd($receiver->receiverType->receiverSubType);
             return view('admin.receiver.view')->with(compact('receiver'));
         }
 

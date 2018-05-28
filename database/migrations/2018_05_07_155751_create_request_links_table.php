@@ -15,19 +15,19 @@ class CreateRequestLinksTable extends Migration
     {
         Schema::create('request_links', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name');
-            $table->string('type');
-            $table->string('sub_type');
-            $table->string('request_line');
-            $table->string('link_number');
-            $table->string('link_email');
+            $table->integer('receiver_id');
+            $table->integer('receiver_type_id');
+            $table->integer('receiver_sub_type_id');
+            $table->integer('request_line_id');
+            $table->string('number');
+            $table->string('email');
             $table->string('preferred_notification');
             $table->boolean('status');
-            $table->string('link_ref');
-            $table->string('link_state');
-            $table->string('link_town');
-            $table->string('priority');
-            $table->string('link_duration');
+            $table->string('ref');
+            $table->integer('state_id');
+            $table->string('towns');
+            $table->integer('priority_id');
+            $table->string('duration');
             $table->double('total_amount');
             $table->timestamps();
         });

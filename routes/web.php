@@ -21,12 +21,12 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::group(['prefix' => '/admin'], function() {
     Route::get('/', 'Admin\AdminController@index');
-
+    Route::get('requester/create', 'Admin\RequesterController@create')->name('requester.create');
+    Route::post('requester/create', 'Admin\RequesterController@createPost')->name('requester.create');
     Route::get('/requesters', 'Admin\RequesterController@index')->name('requesters');
     Route::group(['prefix' => '/requester'], function() {
         Route::get('/{id}', 'Admin\RequesterController@view')->name('requester');
-        Route::get('/create', 'Admin\RequesterController@create')->name('requester.create');
-        Route::post('/create', 'Admin\RequesterController@createPost')->name('requester.create');
+
         Route::get('/edit/{id}', 'Admin\RequesterController@getEdit')->name('requester.edit');
         Route::post('/edit/{id}', 'Admin\RequesterController@postEdit')->name('requester.edit');
     });
@@ -121,6 +121,15 @@ Route::group(['prefix' => '/admin'], function() {
          Route::get('/{id}', 'Admin\BackgroundController@view')->name('background');
          Route::get('/edit/{id}', 'Admin\BackgroundController@getEdit')->name('background.edit');
          Route::post('/edit/{id}', 'Admin\BackgroundController@postEdit')->name('background.edit');
+     });
+
+     Route::get('/request-links', 'Admin\RequestLinkController@index')->name('links');
+     Route::group(['prefix' => '/request-link'], function() {
+         Route::get('/create', 'Admin\RequestLinkController@create')->name('link.create');
+         Route::post('/create', 'Admin\RequestLinkController@createPost')->name('link.create');
+         Route::get('/{id}', 'Admin\RequestLinkController@view')->name('link');
+         Route::get('/edit/{id}', 'Admin\RequestLinkController@getEdit')->name('link.edit');
+         Route::post('/edit/{id}', 'Admin\RequestLinkController@postEdit')->name('link.edit');
      });
 });
 

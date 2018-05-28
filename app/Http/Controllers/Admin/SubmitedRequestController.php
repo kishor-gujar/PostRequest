@@ -11,7 +11,7 @@ class SubmitedRequestController extends Controller
     {
         $requests = SubmitedRequest::paginate(15);
 //        dd($requests);
-        return view('admin.submitedRequest.index')->with(compact('requests'));
+        return view('admin.submitedrequest.index')->with(compact('requests'));
     }
 
     public function view($id)
@@ -19,7 +19,7 @@ class SubmitedRequestController extends Controller
         if($id){
             $request = SubmitedRequest::findOrFail($id);
 //            dd($request->requester);
-            return view('admin.submitedRequest.view')->with(compact('request'));
+            return view('admin.submitedrequest.view')->with(compact('request'));
         }
 
         return redirect('/admin');
@@ -30,7 +30,7 @@ class SubmitedRequestController extends Controller
         if($id){
             $request = SubmitedRequest::findOrFail($id);
         //    dd($request);
-            return view('admin.submitedRequest.edit')->with(compact('request'));
+            return view('admin.submitedrequest.edit')->with(compact('request'));
         }
 
         return redirect('/admin/Request');
@@ -65,7 +65,7 @@ class SubmitedRequestController extends Controller
 
     public function create()
     {
-        return view('admin.SubmitedRequest.create');
+        return view('admin.Submitedrequest.create');
     }
 
     public function createPost(Request $request)

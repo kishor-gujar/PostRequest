@@ -1,3 +1,9 @@
 @import "~font-awesome/scss/font-awesome.scss";
-
 @import "~admin-lte/dist/css/adminlte.css";
+@import "~admin-lte/plugins/iCheck/all.css";
+@import "~admin-lte/plugins/daterangepicker/daterangepicker-bs3.css";
+@import "~admin-lte/plugins/select2/select2.css";
+
+.card {
+  overflow-x: scroll;
+}

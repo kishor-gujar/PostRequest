@@ -16,8 +16,8 @@ class CreateRequestLinesTable extends Migration
         Schema::create('request_lines', function (Blueprint $table) {
             $table->increments('id');
             $table->string('line');
-            $table->string('receiver_type');
-            $table->string('receiver_sub_type');
+            $table->integer('receiver_type_id');
+            $table->integer('receiver_sub_type_id');
             $table->text('request_line_description');
             $table->double('price_per_month');
             $table->string('status');

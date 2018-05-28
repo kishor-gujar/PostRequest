@@ -1,5 +1,17 @@
 {
     "/js/app.js": "/js/app.js",
     "/css/app.css": "/css/app.css",
-    "/css/admin.css": "/css/admin.css"
+    "/css/admin.css": "/css/admin.css",
+    "/resources/assets/js/select2.full.js": "/resources/assets/js/select2.full.js",
+    "/resources/assets/js/demo.js": "/resources/assets/js/demo.js",
+    "/resources/assets/js/bootstrap-colorpicker.js": "/resources/assets/js/bootstrap-colorpicker.js",
+    "/resources/assets/js/bootstrap-timepicker.js": "/resources/assets/js/bootstrap-timepicker.js",
+    "/resources/assets/js/moment.js": "/resources/assets/js/moment.js",
+    "/resources/assets/js/jquery.slimscroll.js": "/resources/assets/js/jquery.slimscroll.js",
+    "/resources/assets/js/icheck.js": "/resources/assets/js/icheck.js",
+    "/resources/assets/js/fastclick.js": "/resources/assets/js/fastclick.js",
+    "/resources/assets/js/daterangepicker.js": "/resources/assets/js/daterangepicker.js",
+    "/resources/assets/js/jquery.inputmask.js": "/resources/assets/js/jquery.inputmask.js",
+    "/resources/assets/js/jquery.inputmask.date.extensions.js": "/resources/assets/js/jquery.inputmask.date.extensions.js",
+    "/resources/assets/js/jquery.inputmask.extensions.js": "/resources/assets/js/jquery.inputmask.extensions.js"
 }

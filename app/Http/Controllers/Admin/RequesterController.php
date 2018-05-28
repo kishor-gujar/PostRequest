@@ -62,7 +62,7 @@ class RequesterController extends Controller
 
     public function create()
     {
-        return view('admin.requester.create');
+       return view('admin.requester.create');
     }
 
     public function createPost(Request $request)
@@ -71,9 +71,11 @@ class RequesterController extends Controller
             'number' => 'required|unique:requesters',
             'email' => 'required|email|unique:requesters',
             'status' => 'required',
+            'name' => 'required'
         ]);
 
         $requester = new Requester([
+            'name' => $request->name,
             'number' => $request->number,
             'email' => $request->email,
             'status' => $request->status

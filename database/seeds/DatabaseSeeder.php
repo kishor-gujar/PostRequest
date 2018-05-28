@@ -24,6 +24,7 @@ class DatabaseSeeder extends Seeder
              PriorityTableSeeder::class,
              AdvertiserTableSeeder::class,
              BackgroundTableSeeder::class,
+             RequestLinkTableSeeder::class,
          ]);
 
     }

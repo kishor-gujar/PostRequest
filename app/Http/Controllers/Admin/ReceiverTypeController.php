@@ -19,7 +19,7 @@ class ReceiverTypeController extends Controller
     {
         if ($id) {
             $receiverType = ReceiverType::findOrFail($id);
-//            dd($request->requester);
+//            dd($receiverType->receiverSubType->text);
             return view('admin.receivertype.view')->with(compact('receiverType'));
         }
 
@@ -29,7 +29,6 @@ class ReceiverTypeController extends Controller
     {
         if($id){
             $receiverType = ReceiverType::findOrFail($id);
-            //    dd($request);
             return view('admin.receivertype.edit')->with(compact('receiverType'));
         }
 

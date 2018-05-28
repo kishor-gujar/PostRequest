@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers\Admin;
 
+use App\ReceiverSubType;
+use App\ReceiverType;
 use App\RequestLine;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -18,9 +20,12 @@ class LineController extends Controller
     public function view($id)
     {
         if ($id) {
+//            dd(ReceiverType::find(1)->receiverSubType);
+            $receiver_types = ReceiverType::all();
+            $receiver_sub_types = ReceiverSubType::all();
             $line = RequestLine::findOrFail($id);
 //            dd($request->requester);
-            return view('admin.line.view')->with(compact('line'));
+            return view('admin.line.view')->with(compact('line', 'receiver_types', 'receiver_sub_types'));
         }
 
         return redirect('/admin');
